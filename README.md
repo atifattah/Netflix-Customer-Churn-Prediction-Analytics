@@ -1,212 +1,490 @@
-Netflix Customer Churn Prediction & Analytics Dashboard
+🎬 Netflix Customer Churn Prediction & Analytics Dashboard
 
-An end-to-end Machine Learning and Business Intelligence solution to
-predict customer churn, identify high-risk customers, and generate
-actionable retention insights using customer behavior, subscription, and
-engagement data.
+An End-to-End Machine Learning and Business Intelligence Solution for
+Customer Churn Prediction, Risk Analysis, and Retention Strategy
+Optimization
 
-Table of Contents
+------------------------------------------------------------------------
 
--   Project Overview
--   Business Problem
--   Project Architecture
--   Machine Learning Workflow
--   Model Performance
--   Feature Importance
--   Database Design
--   Power BI Dashboard
--   Streamlit Application
--   Technologies Used
--   Installation & Setup
--   Future Improvements
--   Disclaimer
+📌 Table of Contents
 
-Project Overview
+1.  Project Overview
+2.  Business Problem
+3.  Project Architecture
+4.  Data Pipeline Flow
+5.  Machine Learning Workflow
+6.  Model Performance
+7.  Feature Engineering
+8.  Database Architecture
+9.  Power BI Dashboard
+10. Streamlit Application
+11. Technologies Used
+12. Installation & Setup
+13. Future Improvements
+14. Disclaimer
+15. Author
+
+------------------------------------------------------------------------
+
+📌 Project Overview
 
 Customer churn is one of the biggest challenges for subscription-based
 businesses.
 
-This project develops a predictive analytics solution to:
+This project develops an end-to-end analytics and machine learning
+solution to:
 
 -   Identify customers likely to churn
--   Estimate churn probability
--   Segment customers into risk categories
--   Analyze customer behavior patterns
--   Generate retention insights
+-   Predict churn probability
+-   Classify customers into risk categories
+-   Understand customer engagement behavior
+-   Generate actionable retention insights
 
-Business Problem
+The solution combines:
 
-The objective is to understand:
+-   Machine Learning
+-   Data Analytics
+-   SQL Database Engineering
+-   Streamlit Application Development
+-   Power BI Dashboard Visualization
 
--   Who is likely to churn?
--   Why customers are leaving?
--   Which customers require immediate attention?
--   How retention strategies can be improved?
+------------------------------------------------------------------------
 
-Customers are segmented into:
+🎯 Business Problem
 
--   High Risk
--   Medium Risk
--   Low Risk
+Subscription businesses need to identify customers who are at risk of
+leaving before churn occurs.
 
-Project Architecture
+This project answers:
 
-Customer Dataset | ↓ Data Cleaning & Transformation | ↓ Feature
-Engineering | ↓ Random Forest Churn Model | ↓ Churn Probability
-Prediction | ↓ MySQL Database Storage | ↓ Power BI Dashboard & Streamlit
-Application
+Who is likely to churn?
 
-Machine Learning Workflow
+Identify customers with high churn probability.
 
-Performed:
+Why are customers leaving?
 
--   Data cleaning
--   Missing value handling
--   Feature transformation
--   Categorical encoding
--   Feature selection
+Analyze:
 
-Engineered features:
+-   Engagement behavior
+-   Login activity
+-   Payment issues
+-   Subscription patterns
 
--   Engagement Score
--   Payment Risk Score
--   Inactivity Score
--   Customer Health Score
+Which customers require attention?
 
-Machine Learning Model
+Customers are categorized into:
 
-Models Used:
+    HIGH RISK
+        |
+        ↓
+    MEDIUM RISK
+        |
+        ↓
+    LOW RISK
 
-Baseline: - Logistic Regression
+How can retention improve?
 
-Final: - Random Forest Classifier
+Use predictive insights to design:
 
-Random Forest was selected because it:
+-   Targeted offers
+-   Customer engagement campaigns
+-   Retention strategies
 
--   Handles nonlinear patterns
+------------------------------------------------------------------------
+
+🏗️ Project Architecture
+
+                    CUSTOMER DATA SOURCES
+
+            ┌─────────────────────────────┐
+            │ Customer Information        │
+            │ Subscription Data           │
+            │ User Engagement Data        │
+            │ Historical Churn Labels     │
+            └──────────────┬──────────────┘
+                           |
+                           ↓
+
+            ┌─────────────────────────────┐
+            │ Data Cleaning & Processing  │
+            │ Missing Value Handling     │
+            │ Data Transformation        │
+            └──────────────┬──────────────┘
+                           |
+                           ↓
+
+            ┌─────────────────────────────┐
+            │ Feature Engineering         │
+            │ Engagement Score            │
+            │ Payment Risk Score          │
+            │ Inactivity Score            │
+            │ Customer Health Score       │
+            └──────────────┬──────────────┘
+                           |
+                           ↓
+
+            ┌─────────────────────────────┐
+            │ Machine Learning Model      │
+            │ Random Forest Classifier    │
+            └──────────────┬──────────────┘
+                           |
+                           ↓
+
+            ┌─────────────────────────────┐
+            │ Churn Probability Prediction│
+            │ Risk Classification         │
+            └──────────────┬──────────────┘
+                           |
+              ┌────────────┴────────────┐
+              ↓                         ↓
+
+     ┌─────────────────┐       ┌─────────────────┐
+     │ MySQL Database  │       │ Streamlit App   │
+     │ Predictions     │       │ Real-time ML    │
+     └────────┬────────┘       └────────┬────────┘
+              |
+              ↓
+
+     ┌─────────────────────────┐
+     │ Power BI Analytics      │
+     │ Executive Dashboard     │
+     │ ML Monitoring           │
+     └─────────────────────────┘
+
+------------------------------------------------------------------------
+
+🧠 Machine Learning Workflow
+
+    Raw Customer Data
+
+            |
+            ↓
+
+    Exploratory Data Analysis
+
+            |
+            ↓
+
+    Data Preprocessing
+
+            |
+            ↓
+
+    Feature Engineering
+
+            |
+            ↓
+
+    Model Training
+
+            |
+            ↓
+
+    Model Evaluation
+
+            |
+            ↓
+
+    Churn Prediction
+
+            |
+            ↓
+
+    Prediction Storage
+
+            |
+            ↓
+
+    Dashboard Analytics
+
+------------------------------------------------------------------------
+
+⚙️ Feature Engineering
+
+Created ML features:
+
+  Feature                 Purpose
+  ----------------------- -------------------------------------
+  Engagement Score        Measures customer activity
+  Payment Risk Score      Identifies payment issues
+  Inactivity Score        Measures customer inactivity
+  Customer Health Score   Overall customer relationship score
+
+------------------------------------------------------------------------
+
+🤖 Machine Learning Model
+
+Baseline Model
+
+Logistic Regression
+
+Final Model
+
+Random Forest Classifier
+
+Random Forest was selected because:
+
+-   Handles nonlinear customer behavior
 -   Provides feature importance
--   Works well with mixed data
--   Reduces overfitting using ensemble learning
+-   Works well with structured data
+-   Reduces overfitting through ensemble learning
 
-Model Output
+------------------------------------------------------------------------
 
-The model generates:
+📊 Model Output
 
--   Churn Probability
--   Prediction (Churn / Stay)
--   Risk Category
--   Model Version
+For every customer, the model generates:
+
+    Customer ID
+          |
+          ↓
+    Churn Probability
+          |
+          ↓
+    Prediction
+          |
+          ↓
+    Risk Category
+          |
+          ↓
+    Retention Action
 
 Example:
 
-Customer ID: CUST10006
+    Customer ID:
+    CUST10006
 
-Churn Probability: 98%
+    Churn Probability:
+    98%
 
-Prediction: Churn
+    Prediction:
+    Churn
 
-Risk Category: HIGH RISK
+    Risk Category:
+    HIGH RISK
 
-Database Design
+------------------------------------------------------------------------
 
-MySQL tables:
+🗄️ Database Architecture
 
-customers: - Customer information
+                    MySQL Database
 
-subscriptions: - Subscription details - Payment information
+                           |
+            --------------------------------
 
-user_engagement: - Viewing and engagement behavior
+            customers
 
-churn_labels: - Historical churn status
+            |
+            ↓
 
-churn_predictions: - ML prediction results
+            subscriptions
 
-Power BI Dashboard
+            |
+            ↓
 
-Dashboard pages:
+            user_engagement
 
-1.  Introduction Page
-2.  Summary Overview
-3.  Executive Churn Overview
-4.  ML Risk Dashboard
-5.  Customer Behaviour Analysis
-6.  Model Monitoring
+            |
+            ↓
 
-Streamlit Application
+            churn_labels
 
-Features:
+            |
+            ↓
 
--   Customer input interface
--   Real-time churn prediction
--   Probability score
--   Risk classification
--   Database storage
+            churn_predictions
+
+Database stores:
+
+customers
+
+-   Customer details
+-   Demographics
+-   Signup information
+
+subscriptions
+
+-   Subscription plan
+-   Monthly fee
+-   Payment method
+-   Payment failures
+
+user_engagement
+
+-   Watch hours
+-   Movies watched
+-   Series watched
+-   Login frequency
+
+churn_predictions
+
+-   Churn probability
+-   Prediction
+-   Risk category
+-   Model version
+
+------------------------------------------------------------------------
+
+📈 Power BI Dashboard
+
+Dashboard Pages:
+
+    Introduction Page
+
+            ↓
+
+    Summary Overview
+
+            ↓
+
+    Executive Churn Overview
+
+            ↓
+
+    ML Risk Dashboard
+
+            ↓
+
+    Customer Behaviour Analysis
+
+            ↓
+
+    Model Monitoring
+
+            ↓
+
+    Disclaimer
+
+Dashboard provides:
+
+-   Executive KPIs
+-   Customer churn trends
+-   Risk segmentation
+-   ML prediction analysis
+-   Behavioral insights
+
+------------------------------------------------------------------------
+
+🖥️ Streamlit Application
 
 Workflow:
 
-User Input ↓ Feature Processing ↓ Random Forest Model ↓ Prediction
-Result ↓ Save Prediction in MySQL
+    Customer Input
 
-Technologies Used
+          ↓
 
-Programming: - Python
+    Feature Processing
 
-Machine Learning: - Scikit-learn - Random Forest - Logistic Regression
+          ↓
 
-Data Processing: - Pandas - NumPy
+    Random Forest Model
 
-Database: - MySQL - SQLAlchemy - PyMySQL
+          ↓
 
-Visualization: - Power BI - Plotly
+    Prediction Probability
 
-Application: - Streamlit
+          ↓
 
-Installation & Setup
+    Risk Classification
 
-Clone repository:
+          ↓
 
-git clone https://github.com/yourusername/Netflix-Churn-Prediction.git
+    Save Result into MySQL
 
-Create environment:
+Application Features:
 
-python -m venv venv
+-   Customer input interface
+-   Real-time churn prediction
+-   Probability calculation
+-   Risk classification
+-   Database integration
 
-Activate:
+------------------------------------------------------------------------
 
-venv
+🛠️ Technologies Used
 
-Install dependencies:
+Programming:
 
-pip install -r requirements.txt
+-   Python
 
-Environment Configuration
+Machine Learning:
 
-Create .env:
+-   Scikit-learn
+-   Random Forest
+-   Logistic Regression
 
-DB_HOST=localhost DB_USER=root DB_PASSWORD=your_password
-DB_NAME=netflix_churn DB_PORT=3306
+Data Processing:
 
-Run Application
+-   Pandas
+-   NumPy
 
-streamlit run app/app.py
+Database:
 
-Future Improvements
+-   MySQL
+-   SQLAlchemy
+-   PyMySQL
+
+Visualization:
+
+-   Power BI
+-   Plotly
+
+Application:
+
+-   Streamlit
+
+------------------------------------------------------------------------
+
+⚙️ Installation & Setup
+
+Clone Repository:
+
+    git clone https://github.com/yourusername/Netflix-Churn-Prediction.git
+
+Create Environment:
+
+    python -m venv venv
+
+Install Dependencies:
+
+    pip install -r requirements.txt
+
+Environment Configuration:
+
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=your_password
+    DB_NAME=netflix_churn
+    DB_PORT=3306
+
+Run Application:
+
+    streamlit run app/app.py
+
+------------------------------------------------------------------------
+
+🚀 Future Improvements
 
 -   Deploy ML model using FastAPI
--   Create REST API
--   Deploy dashboard on cloud
--   Add automated model retraining
--   Add SHAP explainability
--   Implement MLOps workflow
+-   Create REST prediction API
+-   Cloud deployment
+-   Automated model retraining pipeline
+-   SHAP explainability
+-   ML monitoring system
+-   MLOps implementation
 
-Disclaimer
+------------------------------------------------------------------------
+
+⚠️ Disclaimer
 
 This project is developed for educational and portfolio purposes.
 
 Machine learning predictions represent probability-based estimates and
 should support, not replace, business decisions.
 
-Author
+------------------------------------------------------------------------
+
+👨‍💻 Author
 
 Atif Mahmood
 
