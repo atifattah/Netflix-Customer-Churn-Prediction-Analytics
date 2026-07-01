@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1 Score,ROC-AUC,Confusion Matrix
+Logistic Regression,0.784,0.6473,0.8234,0.7248,0.885,"[[999 310]
+ [122 569]]"
+Random Forest,0.969,1.0,0.9103,0.953,0.9568,"[[1309    0]
+ [  62  629]]"
