@@ -478,31 +478,35 @@ git clone https://github.com/yourusername/Netflix-Churn-Prediction.git
 Create Virtual Environment
 python -m venv venv
 
-Activate:
+## Activate:
 
 Windows:
 
 venv\Scripts\activate
-Install Dependencies
+
+## Install Dependencies
 pip install -r requirements.txt
+
 🔐 Environment Configuration
 
-Create a .env file:
+## Create a .env file:
 
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=netflix_churn
 DB_PORT=3306
+
 ▶️ Run Streamlit Application
 streamlit run app/app.py
 
-Application will open:
+## Application will open:
 
 http://localhost:8501
+
 📌 Future Improvements
 
-Possible enhancements:
+## Possible enhancements:
 
 Deploy ML model using FastAPI
 Create REST prediction API
@@ -519,6 +523,6 @@ Machine learning predictions represent probability-based estimates and should su
 
 👨‍💻 Author
 
-**Atif Mahmood**
+## Atif Mahmood
 
-Data Analyst | Data Scientist | Machine Learning Enthusiast
+Data Scientist | Data Analytics | Machine Learning
