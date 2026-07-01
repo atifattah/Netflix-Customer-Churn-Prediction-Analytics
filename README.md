@@ -474,3 +474,51 @@ Netflix-Churn-Prediction
 
 ```bash
 git clone https://github.com/yourusername/Netflix-Churn-Prediction.git
+
+Create Virtual Environment
+python -m venv venv
+
+Activate:
+
+Windows:
+
+venv\Scripts\activate
+Install Dependencies
+pip install -r requirements.txt
+🔐 Environment Configuration
+
+Create a .env file:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=netflix_churn
+DB_PORT=3306
+▶️ Run Streamlit Application
+streamlit run app/app.py
+
+Application will open:
+
+http://localhost:8501
+📌 Future Improvements
+
+Possible enhancements:
+
+Deploy ML model using FastAPI
+Create REST prediction API
+Deploy dashboard on cloud
+Add automated model retraining pipeline
+Implement ML model monitoring
+Add explainable AI using SHAP
+Implement MLOps workflow
+⚠️ Disclaimer
+
+This project is developed for educational and portfolio purposes.
+
+Machine learning predictions represent probability-based estimates and should support, not replace, business decisions.
+
+👨‍💻 Author
+
+**Atif Mahmood**
+
+Data Analyst | Data Scientist | Machine Learning Enthusiast
